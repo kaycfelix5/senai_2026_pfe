@@ -1,0 +1,57 @@
+:root{
+    --cor-fundo-pagina:#272728;
+    --cor-texto-principal:#d9d9d9;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-pagina);
+}
+.container-pagina{
+    width: min(1100pc,90%);
+    margin: 0 auto;
+}
+.cabecalho-principal{
+    min-height: 70vh;
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #2b3bf1 0%, #111827 60%);
+    padding: clamp(2rem, 5vw, 5rem) 0;
+}
+.cabecalho-principal_titulo{
+    font-size: 18pt;
+    color: var(--cor-texto-principal);
+    margin: 0 0 1.5rem;
+}
+.cabecalho-principal_subtitulo{
+    font-size: 14pt;
+    color:var(--cor-texto-principal);
+    margin: 0 0 1.5rem;
+}
+
+.botao{
+    background-color: #1bf514;
+    border-radius: 15px;
+    padding: 10px;
+    
+}
+.email{
+    background-color: transparent;
+    border-color: #d9d9d9;
+    border-radius:15px;
+    padding: 10px;
+    width: 400px;
+}
+.garantia {
+    text-align: center;
+}
+.formulario {
+    text-align:center;
+    
+}
