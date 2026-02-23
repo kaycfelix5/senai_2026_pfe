@@ -1,0 +1,20 @@
+const prompt = require('prompt-sync')(); //sesisenaisp323EDUC
+console.log(" ___________________________________________________________");
+console.log("|                                                           |")
+console.log("|                                                           |")
+console.log("|                                                           |")
+console.log("|      _____                                                     |")
+console.log("|     |_   _|                                                |")
+console.log("|     |O | O|                                                |")
+console.log("|      |___|                                           |")
+console.log("|                                                           |")
+console.log("|                                                           |")
+console.log("|                                                           |")
+console.log("|                                   _____________________   |")
+console.log("|                                  |_____________________|  |")
+console.log("|                                    ||               ||    |")
+console.log("|____________________________________||_______________||____|")
+console.log("|                                    ||               ||    |")
+console.log("|                                                           |")
+console.log("|                                                           |")
+console.log(" ___________________________________________________________");
