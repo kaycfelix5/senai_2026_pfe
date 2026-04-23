@@ -1,0 +1,131 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #000000); /* MAIS ESCURO */
+    color: #ffffff;
+}
+
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* ===================== */
+/* TITULO */
+/* ===================== */
+
+.container h2 {
+    margin: 30px 0 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ===================== */
+/* FORM */
+/* ===================== */
+
+form {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* subtitulo */
+form h5 {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+/* labels */
+form label {
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #aaa;
+}
+
+/* inputs */
+form input {
+    padding: 10px 12px;
+
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+
+    color: #ffffff;
+    font-size: 14px;
+
+    outline: none;
+    transition: 0.2s;
+}
+
+/* placeholder */
+form input::placeholder {
+    color: #666;
+}
+
+/* foco */
+form input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+/* ===================== */
+/* BOTÃO */
+/* ===================== */
+
+form button {
+    margin-top: 25px;
+    padding: 12px;
+
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* hover */
+form button:hover {
+    background: #ffffff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* click */
+form button:active {
+    transform: scale(0.97);
+}
+
+/* ===================== */
+/* RESPONSIVO */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}

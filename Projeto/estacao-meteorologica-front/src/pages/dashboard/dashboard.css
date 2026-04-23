@@ -1,0 +1,246 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #050505;
+    color: #ffffff;
+}
+
+/* ===================== */
+/* HEADER */
+/* ===================== */
+
+header {
+    width: 100%;
+    padding: 20px 40px;
+
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* título */
+header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* NAV */
+header nav {
+    display: flex;
+    gap: 12px;
+}
+
+/* LINKS = BOTÕES */
+header nav a {
+    padding: 8px 16px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+
+    background: rgba(255,255,255,0.02);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+/* hover */
+header nav a:hover {
+    background: #ffffff;
+    color: #000000;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(255,255,255,0.15);
+}
+
+/* click */
+header nav a:active {
+    transform: scale(0.95);
+}
+
+/* foco */
+header nav a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+}
+
+/* ===================== */
+/* SECTIONS */
+/* ===================== */
+
+section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+/* TITULOS */
+h6 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ===================== */
+/* CARDS (BOTÕES) */
+/* ===================== */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+
+    padding: 20px;
+    border-radius: 12px;
+
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+/* hover */
+.card:hover {
+    background: #ffffff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.card h6 {
+    color: #ccc;
+}
+
+.card h2 {
+    margin-top: 8px;
+    font-size: 26px;
+    color: inherit;
+}
+
+/* ===================== */
+/* GRAFICOS */
+/* ===================== */
+
+.graficos {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.graficos div {
+    height: 260px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #aaa;
+    font-size: 14px;
+}
+
+.graficos div::before {
+    content: "Gráfico aparecerá aqui";
+    opacity: 0.6;
+}
+
+/* ===================== */
+/* TABELA */
+/* ===================== */
+
+.tabela {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* cabeçalho */
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.tabela thead {
+    background: rgba(255,255,255,0.08);
+}
+
+.tabela th {
+    padding: 12px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* tbody hack */
+.tabela tbody {
+    display: block;
+}
+
+.tabela tbody tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.tabela td {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* hover */
+.tabela tbody tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* ===================== */
+/* RESPONSIVO */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .tabela tbody tr {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 8px;
+    }
+}

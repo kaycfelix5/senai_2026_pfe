@@ -1,0 +1,8 @@
+.header-light{
+    background-color: rgb(101, 231, 251);
+    color: black;
+}
+.header-dark{
+    background-color: black;
+    color: rgb(101, 231, 251);
+}
