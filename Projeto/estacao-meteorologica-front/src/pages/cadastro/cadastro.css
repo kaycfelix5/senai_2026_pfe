@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle at top, #0a0a0a, #000000); /* MAIS ESCURO */
+    background: radial-gradient(circle at top, #4b4b4b, #000000); /* MAIS ESCURO */
     color: #ffffff;
 }
 
@@ -19,6 +19,7 @@ body {
     width: 90%;
     max-width: 600px;
     margin: 40px auto;
+    color: white;
 }
 
 /* ===================== */

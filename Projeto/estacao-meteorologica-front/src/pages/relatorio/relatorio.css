@@ -1,0 +1,139 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #000000);
+    color: #ffffff;
+}
+
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* ===================== */
+/* TITULOS */
+/* ===================== */
+
+h3 {
+    font-size: 22px;
+    margin: 30px 0 10px;
+    font-weight: 600;
+}
+
+p {
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* ===================== */
+/* GRAFICOS */
+/* ===================== */
+
+.graficos {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 30px;
+
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666;
+    font-size: 14px;
+}
+
+/* placeholder */
+.graficos::before {
+    content: "Gráficos serão exibidos aqui";
+    opacity: 0.6;
+}
+
+/* ===================== */
+/* TABELA */
+/* ===================== */
+
+.tabela-leituras {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* tabela */
+.tabela-leituras table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* cabeçalho */
+.tabela-leituras thead {
+    background: rgba(255,255,255,0.08);
+}
+
+.tabela-leituras th {
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* linhas */
+.tabela-leituras td {
+    padding: 14px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+}
+
+/* hover */
+.tabela-leituras tbody tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* ===================== */
+/* DESTAQUE POR QUALIDADE */
+/* ===================== */
+
+/* você pode melhorar isso depois com classe dinâmica */
+
+.tabela-leituras td:nth-child(2) {
+    font-weight: 500;
+}
+
+/* ===================== */
+/* RESPONSIVO */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .tabela-leituras table {
+        font-size: 12px;
+    }
+
+    .tabela-leituras th,
+    .tabela-leituras td {
+        padding: 10px;
+    }
+}
