@@ -61,7 +61,7 @@ p {
 
 /* placeholder */
 .graficos::before {
-    content: "Gráficos serão exibidos aqui";
+    content: "";
     opacity: 0.6;
 }
 

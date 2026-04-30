@@ -1,4 +1,5 @@
 import Header from '../../components/header';
+import GraficoBarra from '../../components/header/graficoBarra';
 import "./relatorio.css";
 
 export default function Relatorio(){
@@ -14,7 +15,7 @@ export default function Relatorio(){
             <h3>Relatório Estação Meteorológica</h3>
             <p>Monitoramento da temperatura e umidade em tempo real</p>
             <section className="graficos">
-                {/*colocar gráficos*/}
+                    {<GraficoBarra/>}
             </section>
 
             <section className="tabela-leituras">
