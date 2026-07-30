@@ -1,0 +1,35 @@
+.main{
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to bottom, #eef5fc, #dbe8f7);
+
+    padding: 40px 20px;
+}
+
+.image{
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    transition: transform .3s ease;
+}
+
+.image:hover{
+    transform: scale(1.03);
+}
+
+.title{
+    margin-top: 30px;
+
+    color: #003366;
+
+    font-size: 2.2rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    text-shadow: 1px 1px 3px rgba(0,0,0,.1);
+}

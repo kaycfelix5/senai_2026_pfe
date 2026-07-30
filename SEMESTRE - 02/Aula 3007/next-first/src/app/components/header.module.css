@@ -1,0 +1,51 @@
+.header{
+    background: linear-gradient(90deg, #003366, #00509e);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 50px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.title{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.menu li{
+    display: flex;
+    align-items: center;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    transition: all .3s ease;
+}
+
+.menu a:hover{
+    background-color: rgba(255,255,255,.15);
+    color: #ffd700;
+}
