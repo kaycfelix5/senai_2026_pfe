@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./jurosSimples.module.css";
+import styles from "./jurosCompostos.module.css";
 
-export default function JurosSimples() {
+export default function JurosCompostos() {
     const [capital, setCapital] = useState("");
     const [taxa, setTaxa] = useState("");
     const [tempo, setTempo] = useState("");
@@ -29,13 +29,13 @@ export default function JurosSimples() {
             return;
         }
 
-        // Fórmula dos juros simples:
-        // J = C × i × t
-        const juros = c * i * t;
+        // Fórmula dos juros compostos:
+        // M = C × (1 + i)^t
+        const montante = c * Math.pow(1 + i, t);
 
-        // Fórmula do montante:
-        // M = C + J
-        const montante = c + juros;
+        // Juros:
+        // J = M - C
+        const juros = montante - c;
 
         setResultado({
             capital: c.toFixed(2),
@@ -59,8 +59,9 @@ export default function JurosSimples() {
                 <div className={styles.display}>
                     <div className={styles.displayTop}>
                         <span>CALCULADORA FINANCEIRA</span>
+
                         <span className={styles.mode}>
-                            JUROS SIMPLES
+                            JUROS COMPOSTOS
                         </span>
                     </div>
 
@@ -81,11 +82,11 @@ export default function JurosSimples() {
 
                 {/* TÍTULO */}
                 <div className={styles.title}>
-                    <h1>Juros Simples</h1>
+                    <h1>Juros Compostos</h1>
 
                     <p>
                         Calcule os juros e o montante de uma aplicação
-                        utilizando juros simples.
+                        utilizando juros compostos.
                     </p>
                 </div>
 
@@ -218,11 +219,11 @@ export default function JurosSimples() {
                     <span>Fórmula utilizada</span>
 
                     <strong>
-                        J = C × i × t
+                        M = C × (1 + i)ᵗ
                     </strong>
 
                     <small>
-                        J = juros · C = capital · i = taxa · t = tempo
+                        M = montante · C = capital · i = taxa · t = tempo
                     </small>
                 </div>
 
