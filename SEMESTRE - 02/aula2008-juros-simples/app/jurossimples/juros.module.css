@@ -1,173 +1,413 @@
 .page {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1a1a1a;
-    padding: 30px;
+
+    padding: 30px 15px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(circle at top,
+            #292929 0%,
+            #171717 45%,
+            #0d0d0d 100%);
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   CALCULADORA
+========================= */
+
 .calculator {
-    width: 360px;
-    padding: 20px;
+    width: 100%;
+    max-width: 390px;
+
+    padding: 22px;
+
     background: #252525;
-    border-radius: 25px;
+
+    border: 1px solid #363636;
+    border-radius: 28px;
+
+    box-sizing: border-box;
+
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 25px 70px rgba(0, 0, 0, 0.65),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
 }
+
+/* =========================
+   VISOR
+========================= */
 
 .display {
-    min-height: 130px;
+    width: 100%;
+    min-height: 145px;
+
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 18px;
-    background: #111;
+
+    box-sizing: border-box;
+
+    background: #0d0d0d;
+
+    border-radius: 20px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     justify-content: center;
+    align-items: flex-end;
+
     overflow: hidden;
+
+    box-shadow:
+        inset 0 2px 10px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-.title {
+.displayTop {
     width: 100%;
-    color: #777;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     margin-bottom: 15px;
-}
 
-.displayLabel {
-    color: #777;
-    font-size: 12px;
-    margin-bottom: 3px;
-}
-
-.total,
-.placeholder {
-    color: #fff;
-    font-size: 38px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.placeholder {
     color: #666;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
 }
+
+.mode {
+    color: #999;
+}
+
+.display small {
+    color: #666;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.mainValue {
+    color: #ffffff;
+
+    font-size: 36px;
+    font-weight: 300;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.placeholder {
+    color: #555;
+
+    font-size: 36px;
+    font-weight: 300;
+}
+
+/* =========================
+   SELETOR
+========================= */
+
+.switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin: 18px 0;
+}
+
+.switch button {
+    height: 44px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #181818;
+
+    color: #777;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.15s;
+}
+
+.switch button:hover {
+    background: #303030;
+}
+
+.switch button:active {
+    transform: scale(0.98);
+}
+
+.switch .active {
+    background: #ededed;
+    color: #111;
+}
+
+/* =========================
+   INPUTS
+========================= */
 
 .inputGroup {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 .inputGroup label {
     display: block;
-    color: #aaa;
-    font-size: 13px;
+
     margin-bottom: 7px;
+
+    color: #999;
+
+    font-size: 13px;
 }
 
-.inputGroup input {
-    width: 100%;
+.inputWrapper {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
     box-sizing: border-box;
-    height: 48px;
-    padding: 0 15px;
-    border: 1px solid #3a3a3a;
-    border-radius: 12px;
-    outline: none;
+
     background: #181818;
-    color: white;
-    font-size: 16px;
-    transition: 0.2s;
+
+    border: 1px solid #353535;
+    border-radius: 13px;
+
+    transition: border-color 0.2s;
 }
 
-.inputGroup input::placeholder {
-    color: #555;
-}
-
-.inputGroup input:focus {
+.inputWrapper:focus-within {
     border-color: #777;
-    background: #1d1d1d;
 }
+
+.inputWrapper span {
+    color: #666;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.inputWrapper input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    padding: 0 8px;
+}
+
+.inputWrapper input::placeholder {
+    color: #444;
+}
+
+/* Remove setinhas do input number */
+
+.inputWrapper input::-webkit-outer-spin-button,
+.inputWrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputWrapper input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* =========================
+   BOTÕES
+========================= */
 
 .buttons {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 1fr 80px;
+
     gap: 12px;
+
     margin-top: 20px;
 }
 
 .buttons button {
-    height: 58px;
+    height: 62px;
+
     border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    font-size: 25px;
+    border-radius: 16px;
+
+    font-size: 27px;
     font-weight: bold;
-    transition: 0.15s;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        background 0.2s;
 }
 
 .calculate {
-    flex: 1;
-    background: #f2f2f2;
+    background: #f1f1f1;
+
     color: #111;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .calculate:hover {
-    background: #fff;
-    transform: translateY(-1px);
+    background: #ffffff;
 }
 
 .clear {
-    width: 80px;
     background: #3a3a3a;
-    color: white;
+
+    color: #ffffff;
 }
 
 .clear:hover {
-    background: #4a4a4a;
-    transform: translateY(-1px);
+    background: #484848;
 }
 
 .buttons button:active {
-    transform: scale(0.97);
+    transform: scale(0.96);
 }
+
+/* =========================
+   RESULTADO
+========================= */
 
 .result {
-    margin-top: 18px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-top: 18px;
 }
 
-.result div {
-    padding: 14px;
+.resultCard {
+    min-height: 70px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
     background: #181818;
+
+    border: 1px solid #303030;
+
     border-radius: 12px;
-    border: 1px solid #333;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.result span {
+.resultCard span {
+    color: #666;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 6px;
+}
+
+.resultCard strong {
+    color: #ffffff;
+
+    font-size: 13px;
+
+    word-break: break-word;
+}
+
+/* =========================
+   FÓRMULA
+========================= */
+
+.formula {
+    margin-top: 16px;
+
+    padding: 13px;
+
+    background: #1c1c1c;
+
+    border-radius: 12px;
+
+    border: 1px solid #2d2d2d;
+
+    text-align: center;
+}
+
+.formula span {
     display: block;
-    color: #777;
-    font-size: 12px;
+
+    color: #666;
+
+    font-size: 10px;
+
     margin-bottom: 5px;
 }
 
-.result strong {
-    color: white;
-    font-size: 16px;
+.formula strong {
+    color: #aaa;
+
+    font-size: 14px;
 }
 
-@media (max-width: 450px) {
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 420px) {
     .page {
         padding: 15px;
     }
 
     .calculator {
-        width: 100%;
-        max-width: 360px;
+        padding: 17px;
+        border-radius: 22px;
+    }
+
+    .display {
+        min-height: 130px;
+        padding: 17px;
+    }
+
+    .mainValue,
+    .placeholder {
+        font-size: 30px;
+    }
+
+    .resultCard strong {
+        font-size: 11px;
     }
 }
