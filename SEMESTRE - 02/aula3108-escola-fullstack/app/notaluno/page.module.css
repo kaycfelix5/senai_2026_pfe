@@ -1,0 +1,561 @@
+.main {
+    min-height: calc(100vh - 80px);
+
+    padding: 55px 30px;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%),
+        #f5f7fb;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #e8f0ff;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.pageHeader h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.pageHeader p {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+.pageIcon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 320px;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebf0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   CABEÇALHO CARD
+========================= */
+
+.cardHeader {
+    padding: 25px 30px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.cardHeader h3 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.cardHeader p {
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding: 30px;
+}
+
+.field,
+.fieldFull {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.field {
+    flex: 1;
+}
+
+.field label,
+.fieldFull label {
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.row {
+    display: flex;
+
+    gap: 20px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.inputWrapper {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    border: 1px solid #dce1e8;
+
+    border-radius: 10px;
+
+    background: #fafbfc;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.inputWrapper span {
+    margin-right: 10px;
+
+    font-size: 16px;
+}
+
+.inputWrapper input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+.inputWrapper input::placeholder {
+    color: #a1a8b3;
+}
+
+.inputWrapper:focus-within {
+    background: #ffffff;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 4px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.sectionTitle>span {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    font-size: 17px;
+}
+
+.sectionTitle h4 {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.sectionTitle p {
+    margin: 3px 0 0;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+/* =========================
+   GRID DE NOTAS
+========================= */
+
+.gradeGrid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 5px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+.cancel,
+.button {
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.cancel {
+    border: 1px solid #dfe3e8;
+
+    background: #ffffff;
+
+    color: #4b5563;
+}
+
+.cancel:hover {
+    background: #f8fafc;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.22);
+}
+
+.button:hover {
+    background: #1d4ed8;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.28);
+
+    transform: translateY(-1px);
+}
+
+.button:active,
+.cancel:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   PAINEL LATERAL
+========================= */
+
+.infoCard {
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.infoIcon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 20px;
+}
+
+.infoCard h3 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.infoCard>p {
+    margin: 10px 0 25px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.infoItem {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.infoItem>span {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 11px;
+}
+
+.infoItem strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.infoItem small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+/* =========================
+   AVISO
+========================= */
+
+.noteBox {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.noteBox span {
+    font-size: 14px;
+}
+
+.noteBox p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .infoCard {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .main {
+        padding: 35px 15px;
+    }
+
+    .pageIcon {
+        display: none;
+    }
+
+    .pageHeader h2 {
+        font-size: 27px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .gradeGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        padding: 22px;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+
+    .button,
+    .cancel {
+        width: 100%;
+
+        justify-content: center;
+    }
+}

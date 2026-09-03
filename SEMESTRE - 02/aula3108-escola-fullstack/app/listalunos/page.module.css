@@ -1,0 +1,341 @@
+.main {
+    min-height: calc(100vh - 80px);
+    padding: 55px 30px;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%),
+        #f5f7fb;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #e8f0ff;
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pageHeader h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.pageHeader p {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+.pageIcon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebf0;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   CABEÇALHO DA TABELA
+========================= */
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.cardHeader h3 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.cardHeader p {
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+.total {
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    text-align: left;
+}
+
+/* Cabeçalho */
+
+.table th {
+    padding: 16px 24px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #e8ebf0;
+
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* Células */
+
+.table td {
+    padding: 18px 24px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+/* Remove borda da última linha */
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover */
+
+.table tbody tr {
+    transition:
+        background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================
+   ID
+========================= */
+
+.idBadge {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* =========================
+   ALUNO
+========================= */
+
+.student {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #60a5fa);
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.student strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+.student small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+/* =========================
+   SÉRIE
+========================= */
+
+.serie {
+    display: inline-flex;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================
+   RA
+========================= */
+
+.ra {
+    color: #6b7280;
+
+    font-family: monospace;
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+    .main {
+        padding: 35px 15px;
+    }
+
+    .pageHeader {
+        align-items: flex-start;
+    }
+
+    .pageIcon {
+        display: none;
+    }
+
+    .pageHeader h2 {
+        font-size: 27px;
+    }
+
+    .cardHeader {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .table th,
+    .table td {
+        padding: 14px 16px;
+    }
+}

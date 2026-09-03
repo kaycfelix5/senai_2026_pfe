@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Header from "@/components/header";
+import Header from "../components/header";
 import styles from "./pages.module.css";
 
 export default function Principal() {
