@@ -1,145 +1,96 @@
 .main {
     min-height: calc(100vh - 80px);
-    padding: 55px 30px;
-
-    background:
-        radial-gradient(circle at top left,
-            rgba(37, 99, 235, 0.08),
-            transparent 35%),
-        #f5f7fb;
+    padding: 40px 24px;
+    background: #f5f7fb;
 }
 
 .wrapper {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1200px;
     margin: 0 auto;
 }
-
-/* =========================
-   CABEÇALHO
-========================= */
 
 .pageHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-bottom: 35px;
-}
-
-.tag {
-    display: inline-block;
-
-    margin-bottom: 10px;
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    background: #e8f0ff;
-    color: #2563eb;
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    margin-bottom: 28px;
 }
 
 .pageHeader h2 {
-    margin: 0;
-
-    color: #111827;
-
-    font-size: 34px;
-    font-weight: 800;
+    margin: 8px 0 6px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #18212f;
 }
 
 .pageHeader p {
-    margin-top: 10px;
-
-    color: #6b7280;
-
+    margin: 0;
     font-size: 15px;
+    color: #6b7280;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #e9edff;
+    color: #4055c9;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .pageIcon {
-    width: 65px;
-    height: 65px;
-
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 18px;
-
     background: #ffffff;
-
-    font-size: 30px;
-
-    box-shadow:
-        0 8px 25px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    font-size: 27px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
 }
-
-/* =========================
-   CARD
-========================= */
 
 .card {
-    overflow: hidden;
-
     background: #ffffff;
-
-    border: 1px solid #e8ebf0;
-    border-radius: 18px;
-
-    box-shadow:
-        0 10px 35px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
 }
-
-/* =========================
-   CABEÇALHO DA TABELA
-========================= */
 
 .cardHeader {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    padding: 25px 30px;
-
+    justify-content: space-between;
+    padding: 22px 24px;
     border-bottom: 1px solid #edf0f4;
 }
 
 .cardHeader h3 {
-    margin: 0;
-
-    color: #111827;
-
+    margin: 0 0 5px;
     font-size: 19px;
-    font-weight: 700;
+    color: #18212f;
 }
 
 .cardHeader p {
-    margin-top: 6px;
-
-    color: #9ca3af;
-
-    font-size: 13px;
+    margin: 0;
+    font-size: 14px;
+    color: #7a8391;
 }
 
 .total {
-    padding: 8px 13px;
-
-    border-radius: 20px;
-
-    background: #eff6ff;
-    color: #2563eb;
-
-    font-size: 12px;
-    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #f1f3f7;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 600;
 }
-
-/* =========================
-   TABELA
-========================= */
 
 .tableWrapper {
     width: 100%;
@@ -148,194 +99,175 @@
 
 .table {
     width: 100%;
-
     border-collapse: collapse;
-
-    text-align: left;
 }
-
-/* Cabeçalho */
 
 .table th {
-    padding: 16px 24px;
-
+    padding: 15px 20px;
+    text-align: left;
     background: #fafbfc;
-
-    border-bottom: 1px solid #e8ebf0;
-
-    color: #6b7280;
-
-    font-size: 11px;
-    font-weight: 800;
-
+    border-bottom: 1px solid #e9edf2;
+    color: #697386;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.04em;
 }
-
-/* Células */
 
 .table td {
-    padding: 18px 24px;
-
-    border-bottom: 1px solid #f1f5f9;
-
-    color: #374151;
-
+    padding: 16px 20px;
+    border-bottom: 1px solid #eef1f4;
+    color: #293241;
     font-size: 14px;
+    vertical-align: middle;
 }
-
-/* Remove borda da última linha */
 
 .table tbody tr:last-child td {
     border-bottom: none;
 }
 
-/* Hover */
-
-.table tbody tr {
-    transition:
-        background 0.2s ease;
-}
-
 .table tbody tr:hover {
-    background: #f8fafc;
+    background: #fafbff;
 }
-
-/* =========================
-   ID
-========================= */
 
 .idBadge {
-    width: 34px;
-    height: 34px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 9px;
-
-    background: #eff6ff;
-    color: #2563eb;
-
+    min-width: 34px;
+    height: 30px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: #f0f2f6;
+    color: #4b5563;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
 }
-
-/* =========================
-   ALUNO
-========================= */
 
 .student {
     display: flex;
     align-items: center;
-
     gap: 12px;
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
-
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    flex-shrink: 0;
-
     border-radius: 50%;
-
-    background: linear-gradient(135deg,
-            #2563eb,
-            #60a5fa);
-
-    color: #ffffff;
-
+    background: #e9edff;
+    color: #4055c9;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .student strong {
     display: block;
-
-    color: #111827;
-
+    margin-bottom: 3px;
+    color: #202938;
     font-size: 14px;
 }
 
 .student small {
     display: block;
-
-    margin-top: 3px;
-
-    color: #9ca3af;
-
-    font-size: 11px;
+    color: #8b95a5;
+    font-size: 12px;
 }
-
-/* =========================
-   SÉRIE
-========================= */
 
 .serie {
     display: inline-flex;
-
+    align-items: center;
     padding: 6px 10px;
-
     border-radius: 7px;
-
-    background: #f3f4f6;
-
-    color: #374151;
-
+    background: #eef3ff;
+    color: #4860c8;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
-
-/* =========================
-   RA
-========================= */
 
 .ra {
-    color: #6b7280;
-
+    color: #505a6b;
     font-family: monospace;
-
     font-size: 13px;
-    letter-spacing: 0.5px;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-@media (max-width: 700px) {
+.editButton,
+.deleteButton {
+    border: 1px solid transparent;
+    border-radius: 7px;
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.editButton {
+    background: #eef3ff;
+    border-color: #dce5ff;
+    color: #3f57bd;
+}
+
+.editButton:hover {
+    background: #dfe7ff;
+}
+
+.deleteButton {
+    background: #fff1f1;
+    border-color: #ffdede;
+    color: #c94b4b;
+}
+
+.deleteButton:hover {
+    background: #ffe3e3;
+}
+
+.empty {
+    padding: 40px 20px !important;
+    text-align: center;
+    color: #8a93a1 !important;
+}
+
+@media (max-width: 768px) {
+
     .main {
-        padding: 35px 15px;
+        padding: 24px 16px;
     }
 
     .pageHeader {
         align-items: flex-start;
     }
 
-    .pageIcon {
-        display: none;
+    .pageHeader h2 {
+        font-size: 25px;
     }
 
-    .pageHeader h2 {
-        font-size: 27px;
+    .pageIcon {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
     }
 
     .cardHeader {
-        align-items: flex-start;
-
-        gap: 15px;
-
-        padding: 20px;
+        padding: 18px;
     }
 
     .table th,
     .table td {
-        padding: 14px 16px;
+        padding: 13px 14px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
