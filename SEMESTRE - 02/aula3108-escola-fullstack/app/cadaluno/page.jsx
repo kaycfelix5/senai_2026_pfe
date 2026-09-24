@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Header from "../components/header";
 import styles from "./page.module.css";
 
-export default function CadAluno() {
+function CadAluno() {
 
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -291,5 +291,13 @@ export default function CadAluno() {
 
             </main>
         </>
+    );
+}
+
+export default function CadAlunoPage() {
+    return (
+        <Suspense fallback={<div>Carregando...</div>}>
+            <CadAluno />
+        </Suspense>
     );
 }
