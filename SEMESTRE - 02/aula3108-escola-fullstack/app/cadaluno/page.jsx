@@ -21,6 +21,7 @@ function CadAluno() {
     const [carregando, setCarregando] = useState(false);
 
 
+
     // CARREGAR ALUNO PARA EDIÇÃO
     useEffect(() => {
 

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,19 +8,18 @@ import Header from "../components/header";
 import styles from "./page.module.css";
 
 export default function ListAluno() {
-
     const [alunos, setAlunos] = useState([]);
     const [carregando, setCarregando] = useState(true);
 
     const router = useRouter();
-
 
     async function carregarAlunos() {
         try {
             setCarregando(true);
 
             const resposta = await fetch("/api/alunos", {
-                cache: "no-store"
+                method: "GET",
+                cache: "no-store",
             });
 
             const texto = await resposta.text();
@@ -38,29 +38,24 @@ export default function ListAluno() {
                 );
             }
 
-            setAlunos(dados);
-
+            setAlunos(Array.isArray(dados) ? dados : []);
         } catch (error) {
             console.error("Erro ao buscar alunos:", error);
-            alert(error.message);
+            alert(error.message || "Erro ao buscar alunos.");
         } finally {
             setCarregando(false);
         }
     }
 
-
     useEffect(() => {
         carregarAlunos();
     }, []);
-
 
     function editarAluno(id_aluno) {
         router.push(`/cadaluno?id=${id_aluno}`);
     }
 
-
     async function excluirAluno(id_aluno) {
-
         const confirmar = window.confirm(
             "Tem certeza que deseja excluir este aluno?"
         );
@@ -73,32 +68,48 @@ export default function ListAluno() {
             const resposta = await fetch("/api/alunos", {
                 method: "DELETE",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    id_aluno: Number(id_aluno)
-                })
+                    id_aluno: Number(id_aluno),
+                }),
             });
 
-            const dados = await resposta.json();
+            const texto = await resposta.text();
+
+            let dados = {};
+
+            if (texto) {
+                try {
+                    dados = JSON.parse(texto);
+                } catch (error) {
+                    console.error(
+                        "Erro ao interpretar resposta da API:",
+                        error
+                    );
+                }
+            }
 
             if (!resposta.ok) {
                 alert(
-                    dados.erro || "Erro ao excluir aluno."
+                    dados.erro ||
+                    dados.mensagem ||
+                    "Erro ao excluir aluno."
                 );
                 return;
             }
 
-            alert(dados.mensagem);
+            alert(
+                dados.mensagem ||
+                "Aluno excluído com sucesso."
+            );
 
-            carregarAlunos();
-
+            await carregarAlunos();
         } catch (error) {
             console.error("Erro ao excluir aluno:", error);
             alert("Erro ao excluir aluno.");
         }
     }
-
 
     return (
         <>
@@ -108,7 +119,6 @@ export default function ListAluno() {
                 <div className={styles.wrapper}>
 
                     <div className={styles.pageHeader}>
-
                         <div>
                             <span className={styles.tag}>
                                 ALUNOS
@@ -126,14 +136,11 @@ export default function ListAluno() {
                         <div className={styles.pageIcon}>
                             👨‍🎓
                         </div>
-
                     </div>
-
 
                     <section className={styles.card}>
 
                         <div className={styles.cardHeader}>
-
                             <div>
                                 <h3>
                                     Alunos cadastrados
@@ -150,9 +157,7 @@ export default function ListAluno() {
                                     ? "aluno"
                                     : "alunos"}
                             </span>
-
                         </div>
-
 
                         <div className={styles.tableWrapper}>
 
@@ -169,13 +174,12 @@ export default function ListAluno() {
                                     </tr>
                                 </thead>
 
-
                                 <tbody>
 
                                     {carregando && (
                                         <tr>
                                             <td
-                                                colSpan="6"
+                                                colSpan={6}
                                                 className={styles.empty}
                                             >
                                                 Carregando alunos...
@@ -183,12 +187,11 @@ export default function ListAluno() {
                                         </tr>
                                     )}
 
-
                                     {!carregando &&
                                         alunos.length === 0 && (
                                             <tr>
                                                 <td
-                                                    colSpan="6"
+                                                    colSpan={6}
                                                     className={styles.empty}
                                                 >
                                                     Nenhum aluno cadastrado.
@@ -196,10 +199,8 @@ export default function ListAluno() {
                                             </tr>
                                         )}
 
-
                                     {!carregando &&
                                         alunos.map((aluno) => (
-
                                             <tr key={aluno.id_aluno}>
 
                                                 <td>
@@ -209,7 +210,6 @@ export default function ListAluno() {
                                                         ).padStart(2, "0")}
                                                     </span>
                                                 </td>
-
 
                                                 <td>
                                                     <div className={styles.student}>
@@ -235,11 +235,9 @@ export default function ListAluno() {
                                                     </div>
                                                 </td>
 
-
                                                 <td>
                                                     {aluno.idade} anos
                                                 </td>
-
 
                                                 <td>
                                                     <span className={styles.serie}>
@@ -247,13 +245,11 @@ export default function ListAluno() {
                                                     </span>
                                                 </td>
 
-
                                                 <td>
                                                     <span className={styles.ra}>
                                                         {aluno.ra}
                                                     </span>
                                                 </td>
-
 
                                                 <td>
                                                     <div className={styles.actions}>
@@ -286,7 +282,6 @@ export default function ListAluno() {
                                                 </td>
 
                                             </tr>
-
                                         ))}
 
                                 </tbody>
@@ -302,3 +297,4 @@ export default function ListAluno() {
         </>
     );
 }
+
