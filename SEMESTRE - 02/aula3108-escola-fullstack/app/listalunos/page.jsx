@@ -10,6 +10,7 @@ import styles from "./page.module.css";
 export default function ListAluno() {
     const [alunos, setAlunos] = useState([]);
     const [carregando, setCarregando] = useState(true);
+    const [termoBusca, setTermoBusca] = useState("");
 
     const router = useRouter();
 
@@ -111,6 +112,16 @@ export default function ListAluno() {
         }
     }
 
+    // Pesquisa somente a partir do 3º caractere
+    const termo = termoBusca.trim().toLowerCase();
+
+    const alunosFiltrados =
+        termo.length >= 3
+            ? alunos.filter((aluno) =>
+                aluno.nome.toLowerCase().includes(termo)
+            )
+            : alunos;
+
     return (
         <>
             <Header />
@@ -151,13 +162,52 @@ export default function ListAluno() {
                                 </p>
                             </div>
 
-                            <span className={styles.total}>
-                                {alunos.length}{" "}
-                                {alunos.length === 1
-                                    ? "aluno"
-                                    : "alunos"}
-                            </span>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "12px",
+                                    flexWrap: "wrap",
+                                    justifyContent: "flex-end",
+                                }}
+                            >
+                                <input
+                                    type="text"
+                                    value={termoBusca}
+                                    onChange={(e) =>
+                                        setTermoBusca(e.target.value)
+                                    }
+                                    placeholder="Pesquisar aluno..."
+                                    style={{
+                                        padding: "10px 14px",
+                                        border: "1px solid #ccc",
+                                        borderRadius: "8px",
+                                        outline: "none",
+                                        fontSize: "14px",
+                                        minWidth: "230px",
+                                    }}
+                                />
+
+                                <span className={styles.total}>
+                                    {alunosFiltrados.length}{" "}
+                                    {alunosFiltrados.length === 1
+                                        ? "aluno"
+                                        : "alunos"}
+                                </span>
+                            </div>
                         </div>
+
+                        {termo.length > 0 && termo.length < 3 && (
+                            <p
+                                style={{
+                                    marginTop: "10px",
+                                    fontSize: "13px",
+                                    color: "#666",
+                                }}
+                            >
+                                Digite pelo menos 3 caracteres para pesquisar.
+                            </p>
+                        )}
 
                         <div className={styles.tableWrapper}>
 
@@ -188,19 +238,19 @@ export default function ListAluno() {
                                     )}
 
                                     {!carregando &&
-                                        alunos.length === 0 && (
+                                        alunosFiltrados.length === 0 && (
                                             <tr>
                                                 <td
                                                     colSpan={6}
                                                     className={styles.empty}
                                                 >
-                                                    Nenhum aluno cadastrado.
+                                                    Nenhum aluno encontrado.
                                                 </td>
                                             </tr>
                                         )}
 
                                     {!carregando &&
-                                        alunos.map((aluno) => (
+                                        alunosFiltrados.map((aluno) => (
                                             <tr key={aluno.id_aluno}>
 
                                                 <td>

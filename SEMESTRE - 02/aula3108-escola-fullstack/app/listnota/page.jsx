@@ -9,6 +9,7 @@ export default function ListNota() {
     const [notas, setNotas] = useState([]);
     const [carregando, setCarregando] = useState(true);
     const [erro, setErro] = useState("");
+    const [termoBusca, setTermoBusca] = useState("");
 
     // ======================================================
     // CARREGAR NOTAS
@@ -92,7 +93,7 @@ export default function ListNota() {
         }
 
         window.location.href =
-            `/notaluno?id=${idNota}`;
+            "/notaluno?id=" + idNota;
     }
 
     // ======================================================
@@ -177,6 +178,41 @@ export default function ListNota() {
     }
 
     // ======================================================
+    // CALCULAR MÉDIA
+    // ======================================================
+
+    function calcularMedia(nota) {
+
+        const t1 = Number(nota.t1) || 0;
+        const t2 = Number(nota.t2) || 0;
+        const n1 = Number(nota.n1) || 0;
+        const n2 = Number(nota.n2) || 0;
+        const n3 = Number(nota.n3) || 0;
+
+        const media =
+            (t1 + t2 + n1 + n2 + n3) / 5;
+
+        return media.toFixed(2);
+    }
+
+    // ======================================================
+    // PESQUISA PELO NOME
+    // ======================================================
+
+    const termo = termoBusca
+        .trim()
+        .toLowerCase();
+
+    const notasFiltradas =
+        termo.length >= 3
+            ? notas.filter((nota) =>
+                nota.nome
+                    .toLowerCase()
+                    .includes(termo)
+            )
+            : notas;
+
+    // ======================================================
     // TELA
     // ======================================================
 
@@ -215,7 +251,6 @@ export default function ListNota() {
 
                     </div>
 
-
                     {/* ERRO */}
 
                     {erro && (
@@ -237,7 +272,6 @@ export default function ListNota() {
 
                     )}
 
-
                     {/* CARD */}
 
                     <section className={styles.card}>
@@ -257,15 +291,78 @@ export default function ListNota() {
 
                             </div>
 
-                            <span className={styles.total}>
-                                {notas.length}{" "}
-                                {notas.length === 1
-                                    ? "aluno"
-                                    : "alunos"}
-                            </span>
+                            {/* PESQUISA */}
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "12px",
+                                    flexWrap: "wrap",
+                                    justifyContent: "flex-end"
+                                }}
+                            >
+
+                                <input
+                                    type="text"
+                                    value={termoBusca}
+                                    onChange={(e) =>
+                                        setTermoBusca(
+                                            e.target.value
+                                        )
+                                    }
+                                    placeholder="Pesquisar aluno..."
+                                    style={{
+                                        padding:
+                                            "10px 14px",
+                                        border:
+                                            "1px solid #ccc",
+                                        borderRadius:
+                                            "8px",
+                                        outline: "none",
+                                        fontSize:
+                                            "14px",
+                                        minWidth:
+                                            "230px"
+                                    }}
+                                />
+
+                                <span
+                                    className={
+                                        styles.total
+                                    }
+                                >
+                                    {notasFiltradas.length}{" "}
+                                    {notasFiltradas.length === 1
+                                        ? "aluno"
+                                        : "alunos"}
+                                </span>
+
+                            </div>
 
                         </div>
 
+                        {/* AVISO DOS 3 CARACTERES */}
+
+                        {termo.length > 0 &&
+                            termo.length < 3 && (
+
+                                <p
+                                    style={{
+                                        marginTop:
+                                            "10px",
+                                        fontSize:
+                                            "13px",
+                                        color:
+                                            "#666"
+                                    }}
+                                >
+                                    Digite pelo menos
+                                    3 caracteres para
+                                    pesquisar.
+                                </p>
+
+                            )}
 
                         {/* TABELA */}
 
@@ -275,30 +372,38 @@ export default function ListNota() {
 
                                 <div
                                     style={{
-                                        padding: "40px",
-                                        textAlign: "center",
-                                        color: "#64748b"
+                                        padding:
+                                            "40px",
+                                        textAlign:
+                                            "center",
+                                        color:
+                                            "#64748b"
                                     }}
                                 >
                                     Carregando notas...
                                 </div>
 
-                            ) : notas.length === 0 ? (
+                            ) : notasFiltradas.length === 0 ? (
 
                                 <div
                                     style={{
-                                        padding: "40px",
-                                        textAlign: "center",
-                                        color: "#64748b"
+                                        padding:
+                                            "40px",
+                                        textAlign:
+                                            "center",
+                                        color:
+                                            "#64748b"
                                     }}
                                 >
-                                    Nenhuma nota cadastrada.
+                                    Nenhum aluno encontrado.
                                 </div>
 
                             ) : (
 
                                 <table
-                                    className={styles.table}
+                                    className={
+                                        styles.table
+                                    }
                                 >
 
                                     <thead>
@@ -313,16 +418,16 @@ export default function ListNota() {
                                             <th>N1</th>
                                             <th>N2</th>
                                             <th>N3</th>
+                                            <th>Média</th>
                                             <th>Ações</th>
 
                                         </tr>
 
                                     </thead>
 
-
                                     <tbody>
 
-                                        {notas.map(
+                                        {notasFiltradas.map(
                                             (nota) => (
 
                                                 <tr
@@ -349,7 +454,6 @@ export default function ListNota() {
                                                         </span>
 
                                                     </td>
-
 
                                                     {/* ALUNO */}
 
@@ -389,13 +493,11 @@ export default function ListNota() {
 
                                                     </td>
 
-
                                                     {/* RA */}
 
                                                     <td>
                                                         {nota.ra}
                                                     </td>
-
 
                                                     {/* T1 */}
 
@@ -406,13 +508,10 @@ export default function ListNota() {
                                                                 styles.grade
                                                             }
                                                         >
-                                                            {
-                                                                nota.t1
-                                                            }
+                                                            {nota.t1}
                                                         </span>
 
                                                     </td>
-
 
                                                     {/* T2 */}
 
@@ -423,13 +522,10 @@ export default function ListNota() {
                                                                 styles.grade
                                                             }
                                                         >
-                                                            {
-                                                                nota.t2
-                                                            }
+                                                            {nota.t2}
                                                         </span>
 
                                                     </td>
-
 
                                                     {/* N1 */}
 
@@ -440,13 +536,10 @@ export default function ListNota() {
                                                                 styles.grade
                                                             }
                                                         >
-                                                            {
-                                                                nota.n1
-                                                            }
+                                                            {nota.n1}
                                                         </span>
 
                                                     </td>
-
 
                                                     {/* N2 */}
 
@@ -457,13 +550,10 @@ export default function ListNota() {
                                                                 styles.grade
                                                             }
                                                         >
-                                                            {
-                                                                nota.n2
-                                                            }
+                                                            {nota.n2}
                                                         </span>
 
                                                     </td>
-
 
                                                     {/* N3 */}
 
@@ -474,13 +564,26 @@ export default function ListNota() {
                                                                 styles.grade
                                                             }
                                                         >
-                                                            {
-                                                                nota.n3
-                                                            }
+                                                            {nota.n3}
                                                         </span>
 
                                                     </td>
 
+                                                    {/* MÉDIA */}
+
+                                                    <td>
+
+                                                        <span
+                                                            className={
+                                                                styles.grade
+                                                            }
+                                                        >
+                                                            {calcularMedia(
+                                                                nota
+                                                            )}
+                                                        </span>
+
+                                                    </td>
 
                                                     {/* AÇÕES */}
 
@@ -521,7 +624,6 @@ export default function ListNota() {
                                                             >
                                                                 Editar
                                                             </button>
-
 
                                                             <button
                                                                 type="button"
