@@ -29,9 +29,31 @@ db.exec(`
         n1 REAL NOT NULL,
         n2 REAL NOT NULL,
         n3 REAL NOT NULL,
+
         FOREIGN KEY (id_aluno)
         REFERENCES alunos(id_aluno)
         ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS disciplinas (
+        id_disciplina INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL UNIQUE,
+        pontuacao_minima REAL NOT NULL
+            CHECK (pontuacao_minima >= 0)
+    );
+
+    CREATE TABLE IF NOT EXISTS professores (
+        id_professor INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        nif TEXT NOT NULL UNIQUE,
+        dias_aula TEXT NOT NULL,
+        id_disciplina INTEGER NOT NULL,
+        total_aulas_semana INTEGER NOT NULL
+            CHECK (total_aulas_semana >= 1),
+
+        FOREIGN KEY (id_disciplina)
+        REFERENCES disciplinas(id_disciplina)
+        ON DELETE RESTRICT
     );
 `);
 

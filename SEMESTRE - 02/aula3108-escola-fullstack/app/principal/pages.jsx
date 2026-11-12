@@ -11,7 +11,9 @@ export default function Principal() {
 
                 {/* HERO */}
                 <section className={styles.hero}>
+
                     <div className={styles.heroContent}>
+
                         <span className={styles.badge}>
                             SISTEMA ESCOLAR
                         </span>
@@ -23,11 +25,12 @@ export default function Principal() {
 
                         <p>
                             Uma plataforma desenvolvida para facilitar a
-                            administração de alunos, notas e informações
-                            acadêmicas do SESI Mirandópolis.
+                            administração de alunos, professores, disciplinas e notas
+                            do SESI Mirandópolis.
                         </p>
 
                         <div className={styles.heroButtons}>
+
                             <Link
                                 href="/cadaluno"
                                 className={styles.primaryButton}
@@ -41,6 +44,7 @@ export default function Principal() {
                             >
                                 Ver alunos
                             </Link>
+
                         </div>
                     </div>
 
@@ -50,13 +54,15 @@ export default function Principal() {
                             alt="Estudantes em ambiente escolar"
                         />
                     </div>
-                </section>
 
+                </section>
 
                 {/* ESTATÍSTICAS */}
                 <section className={styles.stats}>
+
                     <div className={styles.statCard}>
                         <div className={styles.statIcon}>👨‍🎓</div>
+
                         <div>
                             <strong>Alunos</strong>
                             <span>Gerenciamento de estudantes</span>
@@ -65,6 +71,7 @@ export default function Principal() {
 
                     <div className={styles.statCard}>
                         <div className={styles.statIcon}>📚</div>
+
                         <div>
                             <strong>Notas</strong>
                             <span>Controle do desempenho acadêmico</span>
@@ -73,6 +80,7 @@ export default function Principal() {
 
                     <div className={styles.statCard}>
                         <div className={styles.statIcon}>📊</div>
+
                         <div>
                             <strong>Organização</strong>
                             <span>Informações centralizadas</span>
@@ -81,16 +89,18 @@ export default function Principal() {
 
                     <div className={styles.statCard}>
                         <div className={styles.statIcon}>🔐</div>
+
                         <div>
                             <strong>Segurança</strong>
                             <span>Dados organizados e protegidos</span>
                         </div>
                     </div>
-                </section>
 
+                </section>
 
                 {/* SOBRE */}
                 <section className={styles.about}>
+
                     <div className={styles.aboutImage}>
                         <img
                             src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80"
@@ -99,6 +109,7 @@ export default function Principal() {
                     </div>
 
                     <div className={styles.aboutContent}>
+
                         <span className={styles.sectionTag}>
                             SOBRE O SISTEMA
                         </span>
@@ -114,9 +125,9 @@ export default function Principal() {
                         </p>
 
                         <p>
-                            A plataforma permite cadastrar alunos,
-                            consultar estudantes e registrar e visualizar
-                            suas notas de maneira organizada.
+                            A plataforma permite cadastrar alunos, professores e disciplinas,
+                            além de registrar notas e consultar as informações
+                            acadêmicas de maneira organizada.
                         </p>
 
                         <div className={styles.checkList}>
@@ -124,14 +135,18 @@ export default function Principal() {
                             <div>✓ Consulta de estudantes</div>
                             <div>✓ Registro de notas</div>
                             <div>✓ Consulta do desempenho</div>
+                            <div>✓ Cadastro de professores e disciplinas</div>
+                            <div>✓ Organização dos dias e aulas semanais</div>
                         </div>
+
                     </div>
                 </section>
 
-
                 {/* FUNCIONALIDADES */}
                 <section className={styles.features}>
+
                     <div className={styles.sectionHeader}>
+
                         <span className={styles.sectionTag}>
                             FUNCIONALIDADES
                         </span>
@@ -144,96 +159,149 @@ export default function Principal() {
                             Acesse rapidamente as principais ferramentas
                             do sistema escolar.
                         </p>
-                    </div>
 
+                    </div>
 
                     <div className={styles.featureGrid}>
 
-                        <Link href="/cadaluno" className={styles.featureCard}>
+                        <Link
+                            href="/cadaluno"
+                            className={styles.featureCard}
+                        >
                             <div className={styles.featureIcon}>
                                 👤
                             </div>
 
-                            <h3>
-                                Cadastro de Alunos
-                            </h3>
+                            <h3>Cadastro de Alunos</h3>
 
                             <p>
                                 Cadastre novos estudantes e mantenha
                                 as informações acadêmicas organizadas.
                             </p>
 
-                            <span>
-                                Acessar →
-                            </span>
+                            <span>Acessar →</span>
                         </Link>
 
-
-                        <Link href="/listalunos" className={styles.featureCard}>
+                        <Link
+                            href="/listalunos"
+                            className={styles.featureCard}
+                        >
                             <div className={styles.featureIcon}>
                                 👥
                             </div>
 
-                            <h3>
-                                Lista de Alunos
-                            </h3>
+                            <h3>Lista de Alunos</h3>
 
                             <p>
                                 Consulte os alunos cadastrados
                                 no sistema escolar.
                             </p>
 
-                            <span>
-                                Acessar →
-                            </span>
+                            <span>Acessar →</span>
                         </Link>
 
-
-                        <Link href="/notaluno" className={styles.featureCard}>
+                        <Link
+                            href="/notaluno"
+                            className={styles.featureCard}
+                        >
                             <div className={styles.featureIcon}>
                                 📝
                             </div>
 
-                            <h3>
-                                Cadastro de Notas
-                            </h3>
+                            <h3>Cadastro de Notas</h3>
 
                             <p>
                                 Registre as notas e informações
                                 relacionadas ao desempenho dos alunos.
                             </p>
 
-                            <span>
-                                Acessar →
-                            </span>
+                            <span>Acessar →</span>
                         </Link>
 
-
-                        <Link href="/listnota" className={styles.featureCard}>
+                        <Link
+                            href="/listnota"
+                            className={styles.featureCard}
+                        >
                             <div className={styles.featureIcon}>
                                 📈
                             </div>
 
-                            <h3>
-                                Lista de Notas
-                            </h3>
+                            <h3>Lista de Notas</h3>
 
                             <p>
                                 Visualize as notas cadastradas
                                 e acompanhe o desempenho acadêmico.
                             </p>
 
-                            <span>
-                                Acessar →
-                            </span>
+                            <span>Acessar →</span>
+                        </Link>
+
+                        <Link
+                            href="/caddisciplina"
+                            className={styles.featureCard}
+                        >
+                            <div className={styles.featureIcon}>📚</div>
+
+                            <h3>Cadastro de Disciplinas</h3>
+
+                            <p>
+                                Cadastre disciplinas e defina a pontuação mínima para aprovação.
+                            </p>
+
+                            <span>Acessar →</span>
+                        </Link>
+
+                        <Link
+                            href="/listadisciplinas"
+                            className={styles.featureCard}
+                        >
+                            <div className={styles.featureIcon}>📖</div>
+
+                            <h3>Lista de Disciplinas</h3>
+
+                            <p>
+                                Consulte, edite e organize as disciplinas cadastradas.
+                            </p>
+
+                            <span>Acessar →</span>
+                        </Link>
+
+                        <Link
+                            href="/cadprofessor"
+                            className={styles.featureCard}
+                        >
+                            <div className={styles.featureIcon}>👨‍🏫</div>
+
+                            <h3>Cadastro de Professores</h3>
+
+                            <p>
+                                Cadastre professores, NIF, dias de aula e disciplina responsável.
+                            </p>
+
+                            <span>Acessar →</span>
+                        </Link>
+
+                        <Link
+                            href="/listaprofessores"
+                            className={styles.featureCard}
+                        >
+                            <div className={styles.featureIcon}>👥</div>
+
+                            <h3>Lista de Professores</h3>
+
+                            <p>
+                                Consulte os professores e suas respectivas cargas horárias.
+                            </p>
+
+                            <span>Acessar →</span>
                         </Link>
 
                     </div>
                 </section>
 
-
                 {/* BANNER FINAL */}
                 <section className={styles.finalBanner}>
+
                     <div>
                         <span>PROJETO ESCOLA</span>
 
@@ -253,16 +321,19 @@ export default function Principal() {
                     >
                         Acessar sistema →
                     </Link>
+
                 </section>
 
             </main>
 
-
             {/* FOOTER */}
             <footer className={styles.footer}>
+
                 <div className={styles.footerContent}>
+
                     <div>
                         <h3>🎓 Projeto Escola</h3>
+
                         <p>
                             Sistema de gerenciamento escolar
                             desenvolvido para o SESI Mirandópolis.
@@ -272,9 +343,7 @@ export default function Principal() {
                     <div>
                         <h4>Links rápidos</h4>
 
-                        <Link href="/">
-                            Início
-                        </Link>
+                        <Link href="/">Início</Link>
 
                         <Link href="/cadaluno">
                             Cadastro de alunos
@@ -282,6 +351,14 @@ export default function Principal() {
 
                         <Link href="/listalunos">
                             Lista de alunos
+                        </Link>
+
+                        <Link href="/caddisciplina">
+                            Cadastro de disciplinas
+                        </Link>
+
+                        <Link href="/listadisciplinas">
+                            Lista de disciplinas
                         </Link>
                     </div>
 
@@ -295,12 +372,22 @@ export default function Principal() {
                         <Link href="/listnota">
                             Lista de notas
                         </Link>
+
+                        <Link href="/cadprofessor">
+                            Cadastro de professores
+                        </Link>
+
+                        <Link href="/listaprofessores">
+                            Lista de professores
+                        </Link>
                     </div>
+
                 </div>
 
                 <div className={styles.copyright}>
                     © 2026 Projeto Escola — SESI Mirandópolis
                 </div>
+
             </footer>
         </>
     );

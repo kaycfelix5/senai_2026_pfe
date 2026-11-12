@@ -9,7 +9,7 @@
 }
 
 .container {
-    max-width: 1250px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 16px 25px;
 
@@ -63,6 +63,8 @@
     align-items: center;
     justify-content: flex-end;
     gap: 5px;
+    flex-wrap: wrap;
+    row-gap: 4px;
 
     list-style: none;
     margin: 0;
@@ -71,15 +73,14 @@
 
 .link {
     display: block;
-
-    padding: 10px 12px;
+    padding: 9px 10px;
 
     color: #dce7f5;
     text-decoration: none;
 
     border-radius: 8px;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
 
     transition: 0.3s;
